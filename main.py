@@ -100,9 +100,6 @@ def generate_image_with_imagen(prompt: str, reference_image: Image.Image = None)
             result = client.models.generate_images(
                 model="models/imagen-4.0-generate-preview-06-06",
                 prompt=prompt,
-                reference_images=[{
-                    'image': img_bytes.getvalue(),
-                }],
                 config=dict(
                     number_of_images=1,
                     output_mime_type="image/jpeg",
